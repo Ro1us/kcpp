@@ -1,0 +1,51 @@
+/**
+ * \author: Arkadiusz Bubak arkadiusz@bubak.pl
+ * \date 2019.04.23
+ * \brief Klasy: Funkcje zaprzyjaznione w C++
+ * v0.01
+ */
+
+#include <iostream>
+using namespace std;
+
+class Pudelko {
+public:
+  Pudelko(float d, float s, float w) : fD(d), fS(s), fW(w) {}
+  friend int Equalsize(Pudelko a, Pudelko b);
+  inline float GetValueD() { return fD; }
+  // inline float GetValueD();
+
+private:
+  float fD, fS, fW;
+};
+
+/* float Pudelko::GetValueD(){
+ *   return fD;
+ * } */
+
+int Equalsize(Pudelko a, Pudelko b) {
+
+  /* Funkcja nie bedąca metodą klasy Pudelko korzysta ze
+   * skladowych prywatnych klasy Pudelko */
+
+  if (a.fD * a.fS * a.fW == b.fD * b.fS * b.fW)
+    // if (a.GetValueD() == b.GetValueD()) // A czy to zadziała?
+    return 137;
+  else
+    return 0;
+}
+
+int main() {
+  Pudelko objA(1, 2, 3);
+  Pudelko objB(1, 2, 3); // 1.
+  // Pudelko objB(1, 4, 3);  // 2. Linie 1.to zamienmy na linie 2.
+
+  // cout << objA.fD << endl;
+  //  cout << objA.GetValueD() << endl;
+
+  cout << Equalsize(objA, objB) << endl;
+
+  // A czy to zadziała?
+  // Pudelko objC(3, 2, 1);
+  // cout << objC.Equalsize(objA, objB) << endl;
+}

@@ -1,0 +1,7 @@
+build
+kcppBasic/build
+kcppBasic.build
+.vscode
+.cache
+kcppBasic.doxygen
+
