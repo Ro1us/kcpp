@@ -63,11 +63,7 @@ endif()
 # ------------------------------------------------------------------------------
 foreach(sourcefile ${APP_SOURCES})
   get_filename_component(target_name ${sourcefile} NAME_WE)
-  add_executable(${target_name} ${sourcefile}
-          src/ZadStudent/Zad_1/ZadClassExample.cc
-          src/ZadStudent/Zad_1/ZadCharExample.cc
-          src/ZadStudent/Zad_1/ZadStringExample.cc
-          src/ZadStudent/Zad_1/ZadMainExample.cc)
+  add_executable(${target_name} ${sourcefile})
   target_include_directories(${target_name} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
   # target_link_libraries(${target_name} PRIVATE "${target_name}_lib")
